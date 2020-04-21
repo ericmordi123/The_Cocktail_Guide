@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>The Cocktail Guide</title>
+</head>
+
+<body>
+
+  <body>
+
+    <!--Header-->
+
+    <header>
+      <nav class="blue lighten-2">
+        <div class="nav-wrapper container">
+          <a href="{{url_for('index')}}" class="brand-logo">The Cocktail Guide</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="{{url_for('index')}}">Home</a></li>
+            <li><a href="{{url_for('recipes')}}">Recipes</a></li>
+            <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+            <li><a href="{{url_for('index')}}">Home</a></li>
+            <li><a href="{{url_for('recipes')}}">Recipes</a></li>
+            <li><a href="{{url_for('add_recipe')}}">Add Recipe</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="parallax-container">
+      </div>
+    </header>
+
+
+
+
+    <!--Section-->
+    <div class="container">
+      {% block content %} {% endblock %}
+    </div>
+
+
+
+
+    <!--Scripts-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('.collapsible').collapsible();
+        $('select').material_select();
+        $(".button-collapse").sideNav();
+        $('.parallax').parallax();
+      });
+    </script>
+  </body>
+</body>
+
+</html>
