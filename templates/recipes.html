@@ -1,0 +1,19 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        {% for recipe in recipe %}
+            {{recipe.cocktail_name}}
+            {{recipe.alcohol_type}}
+            {{recipe.description}}
+            {{recipe.ingredients}}
+            {{recipe.instructions_step_1}}
+            {{recipe.instructions_step_2}}
+            {{recipe.instructions_step_3}}
+            {{recipe.cocktail_image}}
+            {{recipe.alchol_rating}}
+
+        {% endfor %}
+    </body>
+</html>
