@@ -1,13 +1,44 @@
 {% extends 'base.html' %} {% block content %}
 
 <body id="homepage">
-<header><h2><i>Welcome to</i> The Cockail Guide!</h2></header>
-<div class="index_content">
-    <h4>Learn all there is to know about cocktails by following one of our approved recipes</h4>
-    <h4>Think you can make soemthing better? feel free to edit existing cocktail recipes and you can 
-    even add your own!</h4>
-    <a class="waves-effect waves-light btn-large">Get Started</a>
-</div>
+ <div class="slider fullscreen ">
+    <ul class="slides">
+      <li>
+        <img src="https://res.cloudinary.com/dwpozm2nb/image/upload/v1589120074/six_cocktials-hp_dvngxf.jpg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="blue-text text-darken-2">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="https://lorempixel.com/580/250/nature/2"> <!-- random image -->
+        <div class="caption left-align">
+          <h3>Left Aligned Caption</h3>
+          <h5 class="blue-text text-darken-2">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="https://lorempixel.com/580/250/nature/3"> <!-- random image -->
+        <div class="caption right-align">
+          <h3>Right Aligned Caption</h3>
+          <h5 class="blue-text text-darken-2">Here's our small slogan.</h5>
+        </div>
+      </li>
+      <li>
+        <img src="https://lorempixel.com/580/250/nature/4"> <!-- random image -->
+        <div class="caption center-align">
+          <h3>This is our big Tagline!</h3>
+          <h5 class="blue-text text-darken-2">Here's our small slogan.</h5>
+        </div>
+      </li>
+    </ul>
+  </div>
+      
+      <script>
+      $(document).ready(function(){
+    $('.slider').slider();
+  });
+  </script>
 </body>
 
 {% endblock %}
