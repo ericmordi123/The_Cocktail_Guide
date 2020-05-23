@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2>Cocktails</h2>
+
+<div class="row cocktails_card">
+    {% for recipe in recipe %}
+            <!--cocktail card-->
+    <div class="col m4 l3 card_div">
+        <div class="card-panel hoverable card ">
+            <div class="card-image">
+                <img src="{{recipe.cocktail_image}}" alt="cocktail image">
+            </div>
+            <div class="card-content">
+                <span class="card-title">{{recipe.cocktail_name}}</span>
+                <p>{{recipe.description}}</p>
+            </div>
+            <div class="card-action">
+            <a href="#">View Recipe</a>
+            <a href="#">Edit Recipe</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
