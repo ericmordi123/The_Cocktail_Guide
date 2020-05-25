@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block content %}
+<div class="row Cocktail_card">
+    {% for recipe in recipe %}
+     {{recipe.task_name}}
+            {{recipe.cocktail_name}}
+            {{recipe.alcohol_type}}
+            {{recipe.difficulty}}
+            {{recipe.description}}
+    {% endfor %}
+</div>
+
+{% endfor %}

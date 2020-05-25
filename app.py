@@ -12,12 +12,11 @@ mongo = PyMongo(app)
 @app.route('/')
 def index():
     return render_template("index.html")
+                           
 
-
-@app.route('/recipes')
-def recipes():
-    return render_template("recipes.html", recipe=mongo.db.recipe.find())
-
+@app.route('/cocktails')
+def cocktails():
+    return render_template("cocktails.html", recipe=mongo.db.recipe.find(), cocktails=mongo.db.cocktails.find())
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),

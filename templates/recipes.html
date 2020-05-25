@@ -1,18 +1,52 @@
 {% extends 'base.html' %} {% block content %}
 
-<h2>Cocktails</h2>
 
-<!--Cocktails CARD FOR EACH INDIVIDUAL Cocktails-->
-<div class="row Cocktail_card">
-    {% for recipe in recipe %}
-     {{recipe.task_name}}
-            {{recipe.cocktail_name}}
-            {{recipe.alcohol_type}}
-            {{recipe.difficulty}}
-            {{recipe.description}}
-    {% endfor %}
+<h2 class="full_recipe_title">Full Recipe - {{recipe.cocktail_name}}</h2>
+
+<div>
+    <div class="row">
+        <img class="full_recipe_image col m6" src="{{recipe.cocktail_image}}">
+        <div class="full_recipe_ingredients col m6">
+            <h4>Cocktail - {{recipe.cocktail_name}}</h4>
+            <h4>Ingredients</h4>
+            {% for ingredient in recipe.ingredients %}
+                <p>{{ingredient}}</p>
+            {% endfor %}
+        </div>
+    </div>
+    
+    <!--DESCRIPTION-->
+    <div class="row">
+        <div class="description col m6">
+            <h4>Description</h4>
+            <p>{{recipe.description}}</p>
+        </div>
+    </div>
+
+    <!--METHOD-->
+    <div class="row full_recipe_method">
+        <div class="recipe_method col m6">
+            <h4>Instrctions</h4>
+            <p>{{recipe.instructions_step_1}}</p>
+            <h4>Step Two</h4>
+            <p>{{recipe.instructions_step_2}}</p>
+            <h4>Step Three</h4>
+            <p>{{recipe.instructions_step_1}}</p>
+        </div>
+        <div class="full_recipe_info col m6">
+            <h5>Cook Time: {{recipe.alchol_rating}}</h5>
+            <h5>Difficulty: {{recipe.difficulty}}</h5>
+        </div>
+    </div>
+    <div class="row">
+        <!-- <div class="btn-align col m6">
+            <button class="btn waves-effect waves-light grey darken-3" type="button" onclick="location.href = '{{ url_for('delete_recipe', recipes_id=recipes._id) }}'">Delete Recipe
+                <i class="material-icons right">playlist_add</i>
+             </button>
+        </div> -->
+    </div>
 </div>
 
 
-{% endblock %}
 
+{% endblock %}
