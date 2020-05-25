@@ -18,6 +18,10 @@ def index():
 def cocktails():
     return render_template("cocktails.html", recipe=mongo.db.recipe.find(), cocktails=mongo.db.cocktails.find())
 
+@app.route('/addcocktail')
+def addcocktail():
+    return render_template("addcocktail.html", cocktails=mongo.db.cocktails.find())
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT',8000)),
