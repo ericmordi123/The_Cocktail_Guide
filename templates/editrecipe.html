@@ -1,12 +1,160 @@
 {% extends 'base.html' %} {% block content %}
-<div class="row Cocktail_card">
-    {% for recipe in recipe %}
-     {{recipe.task_name}}
-            {{recipe.cocktail_name}}
-            {{recipe.alcohol_type}}
-            {{recipe.difficulty}}
-            {{recipe.description}}
-    {% endfor %}
+
+<h2>Edit Recipe</h2>
+
+<div class="row">
+    <form id='myform' action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12">
+            <div class="row">
+                <!--CUISINE MULTIPLE SELECT-->
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">assignment</i>
+                    <select id="alcohol" name="alcohol">
+                  <option value="" disabled selected>Choose Alcohol</option>
+                    {% for alc in alcohols %}
+                        {% if alc.alcohol == recipe.alcohol %}
+                    <option value="{{alc.alcohol}}" selected >{{alc.alcohol}}</option>
+                        {% else %}
+                            <option value="{{alc.alcohol}}">{{alc.alcohol}}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+                    <label>Cocktails</label>
+                </div>
+        </div>
+        <!--COOK TIME-->
+        <div class="row">
+             <div class="input-field col s6">
+                <i class="material-icons prefix">restaurant</i>
+                <input id="cocktail" name="cocktail" type="text" value="{{recipe.cocktail}}">
+                <label for="icon_prefix">cocktail Name</label>
+            </div>
+            <div class="input-field col s6">
+                <i class="material-icons prefix">alarm</i>
+                <input id="" name="" type="text" value="">
+                <label for="icon_prefix">Cook Time in Minutes</label>
+            </div>
+         </div>
+        <div class="row">
+          <!--ALCOHOL RATING SELECT-->
+            <div class="input-field col s6">
+                <i class="material-icons prefix">filter_1</i>
+                <select id="alchol_rating" name="alchol_rating">
+                  <option value="" disabled selected>Select How Many</option>
+                  <option value="{{recipe.alchol_rating}}"selected>{{recipe.alchol_rating}}</option>
+                    <option value="One">One</option>
+                    <option value="Two">Two</option>
+                    <option value="Three">Three</option>
+                    <option value="Four">Four</option>
+                    <option value="Five">Five</option>
+                    </select>
+                <label>How strong is your cocktail</label>
+            </div>
+            <!--RECIPE DIFFICULTY-->
+            <div class="input-field col s6">
+                <i class="material-icons prefix">equalizer</i>
+                <select id="difficulty" name="difficulty">
+                  <option value="" disabled selected>Select The Difficulty</option>
+                  <option value="{{recipe.difficulty}}" selected >{{recipe.difficulty}}</option>
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+                    </select>
+                <label>What is the Difficulty?</label>
+            </div>
+            <!--RECIPE DESCRIPTION-->
+            <div class="input-field col s12">
+                <i class="material-icons prefix">subject</i>
+                <textarea name="description" id="description" class="materialize-textarea" value="{{recipe.description}}">{{recipe.description}}</textarea>
+                <label for="icon_telephone">Recipe Description</label>
+            </div>
+        </div>
+        <div class="row">
+            <!--INGREDIENTS-->
+            <div class="row">
+                <div class="s6 addrecipe_sub_head">
+                    <h5>Ingredients</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6 m3">
+                    <input id="ingredients" name="ingredients" type="text" value="{{recipe.ingredients[0]}}">
+                    <label for="icon_prefix">First Ingredient</label>
+                </div>
+                <div class="input-field col s6 m3">
+                    <input id="ingredients" name="ingredients" type="text" value="{{recipe.ingredients[1]}}">
+                    <label for="icon_prefix">Second Ingredient</label>
+                </div>
+                <div class="input-field col s6 m3">
+                    <input id="ingredients" name="ingredients" type="text" value="{{recipe.ingredients[2]}}">
+                    <label for="icon_prefix">Third Ingredient</label>
+                </div>
+                <div class="input-field col s6 m3">
+                    <input id="ingredients" name="ingredients" type="text" value="{{recipe.ingredients[3]}}">
+                    <label for="icon_prefix">Fourth Ingredient</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6 m3">
+                    <input id="ingredients" name="ingredients" type="text" value="{{recipe.ingredients[4]}}">
+                    <label for="icon_prefix">Fifth Ingredient</label>
+                </div>
+                <div class="input-field col s6 m3">
+                    <input id="ingredients" name="ingredients" type="text" value="{{recipe.ingredients[5]}}">
+                    <label for="icon_prefix">Sixth Ingredient</label>
+                </div>
+                <div class="input-field col s6 m3">
+                    <input id="ingredients" name="ingredients" type="text" value="{{recipe.ingredients[6]}}">
+                    <label for="icon_prefix">Seventh Ingredient</label>
+                </div>
+                <div class="input-field col s6 m3">
+                    <input id="ingredients" name="ingredients" type="text" value="{{recipe.ingredients[7]}}">
+                    <label for="icon_prefix">Eighth Ingredient</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="ingredients" name="ingredients" type="text" value="{{recipe.ingredients[8]}}">
+                    <label for="icon_prefix">Ninth Ingredient</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="ingredients" name="ingredients" type="text" value="{{recipe.ingredients[9]}}">
+                    <label for="icon_prefix">Tenth Ingredient</label>
+                </div>
+            </div>
+            <!--METHOD GUIDE-->
+            <div class="row">
+                        <div class="row">
+                <div class="s6 add_recipe_sub_head">
+                    <h5>Steps</h5>
+                </div>
+            </div>
+                <div class="input-field col s12 m4">
+                    <textarea name="instructions_step_1" id="instructions_step_1" class="materialize-textarea">{{recipe.instructions_step_1}}</textarea>
+                    <label for="icon_telephone">Step One</label>
+                </div>
+                <div class="input-field col s12 m4">
+                    <textarea name="instructions_step_2" id="instructions_step_2" class="materialize-textarea">{{recipe.instructions_step_2}}</textarea>
+                    <label for="icon_telephone">Step Two</label>
+                </div>
+                <div class="input-field col s12 m4">
+                    <textarea name="instructions_step_3" id="instructions_step_3" class="materialize-textarea">{{recipe.instructions_step_3}}</textarea>
+                    <label for="icon_telephone">Step Three</label>
+                </div>
+            </div>
+            <!--ADD RECIPE IMAGE URL-->
+            <div class="input-field col s12">
+                <i class="material-icons prefix">insert_photo</i>
+                <textarea name="cocktail_image" id="cocktail_image" class="materialize-textarea">{{recipe.cocktail_image}}</textarea>
+                <label for="icon_telephone">Please Add the Cocktail Image URL</label>
+            </div>
+        </div>
+        <!--ADD RECIPE SUBMIT BUTTON-->
+        <div class="row btn-align add_recipe_btn text-center">
+            <button class="btn waves-effect waves-light grey darken-3" type="submit" name="action">Update Recipe
+                <i class="material-icons right">playlist_add</i>
+             </button>
+        </div>
+    </form>
 </div>
 
-{% endfor %}
+{% endblock %}
