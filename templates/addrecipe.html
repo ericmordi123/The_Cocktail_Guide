@@ -21,7 +21,7 @@
         <div class="row">
                 <div class="input-field col s6">
                     <i class="material-icons prefix">assignment</i>
-                    <input id="cocktail_name" name="cocktail_name" type="text">
+                    <input id="cocktail" name="cocktail" type="text">
                     <label for="icon_prefix">What is the name of the cocktail you wish to add?</label>
                 </div>
             <!--PREP TIME-->
@@ -70,51 +70,16 @@
             </div>
         </div>
         <div class="row">
-            <div class="input-field col s6 m3">
-                <input id="ingredients" name="ingredients" type="text">
-                <label for="icon_prefix">First Ingredient</label>
-            </div>
-            <div class="input-field col s6 m3">
-                <input id="ingredients" name="ingredients" type="text">
-                <label for="icon_prefix">Second Ingredient</label>
-            </div>
-            <div class="input-field col s6 m3">
-                <input id="ingredients" name="ingredients" type="text">
-                <label for="icon_prefix">Third Ingredient</label>
-            </div>
-            <div class="input-field col s6 m3">
-                <input id="ingredients" name="ingredients" type="text">
-                <label for="icon_prefix">Fourth Ingredient</label>
+            <div class="input-field col12 add">
+                <input id="ingredients" name="add_ingredient[]" type="text">
+                <label for="icon_prefix">Add Ingredient</label>
+                <a class="btn-floating btn-small waves-effect waves-light red add_form_field"><i class="material-icons">add</i></a>
             </div>
         </div>
-        <div class="row">
-            <div class="input-field col s6 m3">
-                <input id="ingredients" name="ingredients" type="text">
-                <label for="icon_prefix">Fifth Ingredient</label>
-            </div>
-            <div class="input-field col s6 m3">
-                <input id="ingredients" name="ingredients" type="text">
-                <label for="icon_prefix">Sixth Ingredient</label>
-            </div>
-            <div class="input-field col s6 m3">
-                <input id="ingredients" name="ingredients" type="text">
-                <label for="icon_prefix">Seventh Ingredient</label>
-            </div>
-            <div class="input-field col s6 m3">
-                <input id="ingredients" name="ingredients" type="text">
-                <label for="icon_prefix">Eighth Ingredient</label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s6">
-                <input id="ingredients" name="ingredients" type="text">
-                <label for="icon_prefix">Ninth Ingredient</label>
-            </div>
-            <div class="input-field col s6">
-                <input id="ingredients" name="ingredients" type="text">
-                <label for="icon_prefix">Tenth Ingredient</label>
-            </div>
-        </div>
+
+
+
+        
         <!--Instructions-->
         <div class="s6 addrecipe_sub_head">
                 <h5>Instructions</h5>
@@ -147,5 +112,4 @@
         </div>
     </form>
 </div>
-
 {% endblock %}

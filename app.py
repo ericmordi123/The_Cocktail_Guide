@@ -29,7 +29,7 @@ def insert_recipe():
             'alcohol': request.form.get('alcohol'),
             'difficulty': request.form.get('difficulty'),
             'description': request.form.get('description'),
-            'ingredients': request.form.getlist('ingredients'),
+            'ingredients': request.form.getlist('add_ingredient[]'),
             'instructions_step_1': request.form.get('instructions_step_1'),
             'instructions_step_2': request.form.get('instructions_step_2'),
             'instructions_step_3': request.form.get('instructions_step_3'),
@@ -77,7 +77,15 @@ def update_recipe(recipe_id):
     })
     return redirect(url_for('recipe'))
 
-    
+@app.route('/add_cocktail', methods=['POST'])
+def add_cocktail():
+    alcohol = {
+            'cocktail': request.form.get('cocktail'),
+    }
+    alcohols = mongo.db.alcohols
+    alcohols.insert_one(alcohol)
+    return redirect(url_for('recipe'))
+
 
 
 if __name__ == '__main__':
