@@ -70,34 +70,24 @@
             </div>
         </div>
         <div class="row">
-            <div class="input-field col12 add">
-                <input id="ingredients" name="add_ingredient[]" type="text">
+            <div id="add-ingredient" class="input-field s6">
+                <input id="ingredients" name="ingredients" type="text">
                 <label for="icon_prefix">Add Ingredient</label>
-                <a class="btn-floating btn-small waves-effect waves-light red add_form_field"><i class="material-icons">add</i></a>
+                <a id="add-ingredient-button"  class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a>
             </div>
         </div>
-
-
-
-        
         <!--Instructions-->
         <div class="s6 addrecipe_sub_head">
                 <h5>Instructions</h5>
             </div>
-        <div class="row">
-            <div class="input-field col s12 m4">
-                <textarea name="instructions_step_1" id="instructions_step_1" class="materialize-textarea"></textarea>
-                <label for="icon_telephone">Step One</label>
-            </div>
-            <div class="input-field col s12 m4">
-                <textarea name="instructions_step_2" id="instructions_step_2" class="materialize-textarea"></textarea>
-                <label for="icon_telephone">Step Two</label>
-            </div>
-            <div class="input-field col s12 m4">
-                <textarea name="instructions_step_3" id="instructions_step_3" class="materialize-textarea"></textarea>
-                <label for="icon_telephone">Step Three</label>
+          <div class="row">
+            <div id="add-instruction" class="input-field s6">
+                <input id="instructions" name="instructions" type="text">
+                <label for="icon_prefix">Add Instructions</label>
+                <a id="add-instruction-button" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a>
             </div>
         </div>
+
         <!--ADD RECIPE IMAGE URL-->
         <div class="input-field col s12">
             <i class="material-icons prefix">insert_photo</i>

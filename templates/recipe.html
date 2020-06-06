@@ -12,7 +12,7 @@
             </div>
             <div class="card-content">
                 <span class="card-title">{{recipe.cocktail}}</span>
-                <p maxlength="20">{{recipe.description}}</p>
+                <p maxlength="20">{{recipe.description.capitalize()|truncate(30)}}</p>
             </div>
             <div class="card-action">
             <a href="{{ url_for('cocktail_recipe', recipe_id=recipe._id) }}">View Recipe</a>

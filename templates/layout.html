@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Login Example</title>
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+
+</head>
+
+<body>
+<div class="parallax-container">
+      <div class="parallax"><img src="https://res.cloudinary.com/dwpozm2nb/image/upload/v1589120074/six_cocktials-hp_dvngxf.jpg"></div>
+    </div>
+    <div class="section white">
+      <div class="row container">
+        {% block body %}{% endblock %}
+      </div>
+    </div>
+
+
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,65 +1,31 @@
 {% extends 'base.html' %} {% block content %}
-
-<body id="homepage">
+<!--INDEX PAGE-->
+<body>
 <div class="slider fullscreen">
     <ul class="slides">
-      <li>
-        <img src="https://res.cloudinary.com/dwpozm2nb/image/upload/v1589120074/six_cocktials-hp_dvngxf.jpg"> <!-- random image -->
-        <div class="caption center-align">
-          <h3><i>Welcome to..</i><br>The Cockail Guide!</h3>
-          <h5 class="light grey-text text-lighten-3">Think you can make soemthing better? feel free to edit existing cocktail recipes and you can 
-    even add your own!</h5>
-    <a href="{{url_for('recipe')}}" class="waves-effect waves-light btn-large">Get Started</a>
-        </div>
-      </li>
-      <li>
-        <img src="https://res.cloudinary.com/dwpozm2nb/image/upload/v1589152889/cocktail_image1_frghqq.jpg"> <!-- random image -->
-        <div class="caption center-align">
-          <h3><i>Welcome to</i> The Cockail Guide!</h3>
-          <h5 class="light grey-text text-lighten-3">Think you can make soemthing better? feel free to edit existing cocktail recipes and you can 
-    even add your own!</h5>
-    <a class="waves-effect waves-light btn-large">Get Started</a>
-        </div>
-      </li>
-      <li>
-        <img src="https://res.cloudinary.com/dwpozm2nb/image/upload/v1589152893/cocktail_image2_gebyp1.jpg"> <!-- random image -->
-        <div class="caption center-align">
-          <h3><i>Welcome to</i> The Cockail Guide!</h3>
-          <h5 class="light grey-text text-lighten-3">Think you can make soemthing better? feel free to edit existing cocktail recipes and you can 
-    even add your own!</h5>
-    <a class="waves-effect waves-light btn-large">Get Started</a>
-        </div>
-      </li>
-      <li>
-        <img src="https://res.cloudinary.com/dwpozm2nb/image/upload/v1589152899/cocktail_image3_inum61.jpg"> <!-- random image -->
-        <div class="caption center-align">
-          <h3><i>Welcome to</i> The Cockail Guide!</h3>
-          <h5 class="light grey-text text-lighten-3">Think you can make soemthing better? feel free to edit existing cocktail recipes and you can 
-    even add your own!</h5>
-    <a class="waves-effect waves-light btn-large">Get Started</a>
-        </div>
-      </li>
-      <li>
-        <img src="https://res.cloudinary.com/dwpozm2nb/image/upload/v1589152904/cocktail_image4_hplkfp.jpg"> <!-- random image -->
-        <div class="caption center-align">
-          <h3><i>Welcome to</i> The Cockail Guide!</h3>
-          <h5 class="light grey-text text-lighten-3">Think you can make soemthing better? feel free to edit existing cocktail recipes and you can 
-    even add your own!</h5>
-    <a class="waves-effect waves-light btn-large">Get Started</a>
-        </div>
-      </li>
+        <li>
+            <img src="https://res.cloudinary.com/dwpozm2nb/image/upload/e_brightness:0/v1589120069/six_cocktails_uw48pp.jpg"> <!-- random image -->
+        </li>
+        <li>
+            <img src="https://res.cloudinary.com/dwpozm2nb/image/upload/v1589152889/cocktail_image1_frghqq.jpg"> <!-- random image -->
+        </li>
+        <li>
+            <img src="https://res.cloudinary.com/dwpozm2nb/image/upload/v1589152893/cocktail_image2_gebyp1.jpg"> <!-- random image -->
+        </li>
+        <li>
+            <img src="https://res.cloudinary.com/dwpozm2nb/image/upload/v1589152899/cocktail_image3_inum61.jpg"> <!-- random image -->
+        </li>
+        <li>
+            <img src="https://res.cloudinary.com/dwpozm2nb/image/upload/v1589152904/cocktail_image4_hplkfp.jpg"> <!-- random image -->
+        </li>
     </ul>
+    <div class="buttons-wrapper">
+        <div class="center-align z-depth-5 white-text hero-content">
+            <h3><i>Welcome to..</i><br>The Cockail Guide!</h3>
+            <h5 class="header-text">Think you can make something better? feel free to edit existing cocktail recipes and you can even add your own!</h5>
+            <a href="{{url_for('recipe')}}" class="waves-effect waves-light btn-large">Get Started</a>
+        </div>
+    </div>
   </div>
-              
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-<script>
-$(document).ready(function(){
- $(document).ready(function(){
-    $('.slider').slider();
-  });
-  });
-  </script>
-  </body>
-
+</body>
 {% endblock %}

@@ -21,14 +21,16 @@
           <a href="{{url_for('index')}}" class="brand-logo">The Cocktail Guide</a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="{{url_for('index')}}">Home</a></li>
+            <li><a href="{{url_for('home')}}">MyHome</a></li>
             <li><a href="{{url_for('recipe')}}">Recipes</a></li>
             <li><a href="{{url_for('addrecipe')}}">Add Recipe</a></li>
+            <li><a href="{{url_for('alcohols')}}">Alcohols</a></li>
           </ul>
           <ul class="side-nav" id="mobile-demo">
-            <li><a href="{{url_for('index')}}">Home</a></li>
+            <li><a href="{{url_for('home')}}">MyHome</a></li>
             <li><a href="{{url_for('recipe')}}">Recipes</a></li>
             <li><a href="{{url_for('addrecipe')}}">Add Recipe</a></li>
+            <li><a href="{{url_for('alcohols')}}">Alcohols</a></li>
           </ul>
         </div>
       </nav>
@@ -46,7 +48,6 @@
 
 
     <!--Scripts-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script type="text/javascript">
@@ -55,26 +56,45 @@
         $('select').material_select();
         $(".button-collapse").sideNav();
         $('.parallax').parallax();
+        $('.slider').slider();
 
- var max_fields = 10;
-    var wrapper = $(".add");
-    var add_button = $(".add_form_field");
+
+    var max_fields = 10;
+    var ingredientWrapper = $("#add-ingredient");
+    var instructionWrapper = $("#add-instruction");    
+    var add_ingredient_button = $("#add-ingredient-button");
+    var add_instruction_button = $("#add-instruction-button");
 
     var x = 1;
-    $(add_button).click(function(e) {
+    $(add_ingredient_button).click(function(e) {
         e.preventDefault();
         if (x < max_fields) {
             x++;
-            $(wrapper).append('<div><input type="text" name="add_ingredient[]"/><a href="#" class="delete">Delete</a></div>'); //add input box
+            $(ingredientWrapper).append('<div><input type="text" name="ingredients"/><a href="#" class="delete">Delete</a></div>'); //add input box
         } else {
             alert('You have reached the limit')
         }
     });
-
-    $(wrapper).on("click", ".delete", function(e) {
+    $(ingredientWrapper).on("click", ".delete", function(e) {
         e.preventDefault();
         $(this).parent('div').remove();
         x--;
+    })
+
+     var y = 1;
+    $(add_instruction_button).click(function(e) {
+        e.preventDefault();
+        if (y < max_fields) {
+            y++;
+            $(instructionWrapper).append('<div><input type="text" name="instructions"/><a href="#" class="delete">Delete</a></div>'); //add input box
+        } else {
+            alert('You have reached the limit')
+        }
+    });
+        $(instructionWrapper).on("click", ".delete", function(e) {
+        e.preventDefault();
+        $(this).parent('div').remove();
+        y--;
     })
 
 

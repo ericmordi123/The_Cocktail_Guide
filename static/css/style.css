@@ -1,16 +1,49 @@
- .carousel-item {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+
+
+
+/* INDEX PAGE */
+.buttons-wrapper {
+  position: absolute;
+  height: calc(100vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 997;
+  top: 0;
+  pointer-events: none;
+  width: 100%;
+}
+.buttons-wrapper a {
+  pointer-events: auto;
+}
+.mg-rg {
+  margin-right: 1rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
 }
 
-.parallax-container {
-  /* Full height */
-  height: 100% !important;
+.hero-content {
+    padding-top: 30px;
+    padding-bottom: 50px;
+    text-shadow:
+        0.05em 0 black,
+        0 0.05em black,
+        -0.05em 0 black,
+        0 -0.05em black,
+        -0.05em -0.05em black,
+        -0.05em 0.05em black,
+        0.05em -0.05em black,
+        0.05em 0.05em black;
+}
 
-  /* Center and scale the image nicely */
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;}
+.header-text {
+    margin: 50px;
+}
 
+.start-btn{
+    color: white !important;
+}
+.alcohol_card {
+  object-fit: cover;
+} 

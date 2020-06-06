@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2>Alcohols</h2>
+
+<div class="row alcohol_card">
+    {% for alcohols in alcohols %}
+   <div class="card small col l6">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="{{alcohols.alcohol_img}}" >
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">{{alcohols.alcohol}}<i class="material-icons right">more_vert</i></span>
+      <p><a href="#">This is a link</a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+      <p>{{alcohols.alcohol_description}}</p>
+    </div>
+  </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
