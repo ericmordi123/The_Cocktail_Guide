@@ -1,5 +1,7 @@
 
-
+.main-container {
+    padding-top: 30px;
+}
 
 /* INDEX PAGE */
 .buttons-wrapper {
@@ -42,9 +44,6 @@
 }
 
 /* RECIPE CARD PAGE */
-.card-container {
-    padding-top: 20px;
-}
 .cocktails-heading {
     text-align: center;
     color: white;

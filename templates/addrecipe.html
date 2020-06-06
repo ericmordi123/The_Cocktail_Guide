@@ -1,8 +1,9 @@
 {% extends 'base.html' %} {% block content %}
-
-<h2>Add Recipe</h2>
-
-<div class="row">
+<div class="parallax-container">
+    <div class="parallax"><img src="https://res.cloudinary.com/dwpozm2nb/image/upload/v1591487504/cockckt_hy97rx.jpg"></div>
+    <h2 class="cocktails-heading">Add Recipe</h2>
+</div>
+<div class="row container main-container">
     <form id='myform' action="{{ url_for('insert_recipe') }}" method="POST" class="col s12">
             <div class="row">
                 <!--ALCOHOLS MULTIPLE SELECT-->
@@ -38,7 +39,7 @@
                 <i class="material-icons prefix">filter_1</i>
                 <select id="alchol_rating" name="alchol_rating">
                   <option value="" disabled selected>Alcohol Rating</option>
-                    <option value="One"> <i class="tiny star"></i></option>
+                    <option value="One"> One</option>
                     <option value="Two">Two</option>
                     <option value="Three">Three</option>
                     <option value="Four">Four</option>
@@ -73,7 +74,7 @@
             <div id="add-ingredient" class="input-field s6">
                 <input id="ingredients" name="ingredients" type="text">
                 <label for="icon_prefix">Add Ingredient</label>
-                <a id="add-ingredient-button"  class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a>
+                <a id="add-ingredient-button"  class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">add</i></a>
             </div>
         </div>
         <!--Instructions-->
@@ -84,7 +85,7 @@
             <div id="add-instruction" class="input-field s6">
                 <input id="instructions" name="instructions" type="text">
                 <label for="icon_prefix">Add Instructions</label>
-                <a id="add-instruction-button" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a>
+                <a id="add-instruction-button" class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">add</i></a>
             </div>
         </div>
 
@@ -103,3 +104,5 @@
     </form>
 </div>
 {% endblock %}
+
+ 

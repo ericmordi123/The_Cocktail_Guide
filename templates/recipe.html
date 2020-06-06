@@ -3,7 +3,7 @@
     <div class="parallax"><img src="https://res.cloudinary.com/dwpozm2nb/image/upload/v1591482604/small_cocktail2_xrc4ms.jpg"></div>
     <h2 class="cocktails-heading">Cocktails</h2>
 </div>
-<div class="container row card-container">
+<div class="container row main-container">
     {% for recipe in recipe %}
             <!--cocktail card-->
     <div class="col l4 card_div">
@@ -13,7 +13,7 @@
             </div>
             <div class="card-content">
                 <span class="card-title">{{recipe.cocktail.title()}}</span>
-                <p maxlength="20">{{recipe.description.capitalize()|truncate(30)}}</p>
+                <p>{{recipe.description.capitalize()|truncate(30)}}</p>
             </div>
             <div class="card-action">
             <a href="{{ url_for('cocktail_recipe', recipe_id=recipe._id) }}">View Recipe</a>
