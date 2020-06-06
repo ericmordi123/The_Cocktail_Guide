@@ -41,9 +41,34 @@
     margin: 50px;
 }
 
-.start-btn{
-    color: white !important;
+/* RECIPE CARD PAGE */
+.card-container {
+    padding-top: 20px;
 }
+.cocktails-heading {
+    text-align: center;
+    color: white;
+    padding-top: 150px;
+    text-shadow:
+        0.05em 0 black,
+        0 0.05em black,
+        -0.05em 0 black,
+        0 -0.05em black,
+        -0.05em -0.05em black,
+        -0.05em 0.05em black,
+        0.05em -0.05em black,
+        0.05em 0.05em black;
+}
+
+.card .card-image img{
+    height: 300px; 
+}
+
+
+
+
+
+
 .alcohol_card {
   object-fit: cover;
 } 
