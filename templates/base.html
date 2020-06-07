@@ -17,7 +17,7 @@
 
     <header>
       <nav class="">
-        <div class="nav-wrapper container">
+        <div class="nav-wrapper container  teal accent-4">
           <a href="{{url_for('index')}}" class="brand-logo">The Cocktail Guide</a>
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -49,57 +49,7 @@
     <!--Scripts-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script type="text/javascript">
-      $(document).ready(function() {
-        $('.collapsible').collapsible();
-        $('select').material_select();
-        $(".button-collapse").sideNav();
-        $('.parallax').parallax();
-        $('.slider').slider();
-
-
-    var max_fields = 10;
-    var ingredientWrapper = $("#add-ingredient");
-    var instructionWrapper = $("#add-instruction");    
-    var add_ingredient_button = $("#add-ingredient-button");
-    var add_instruction_button = $("#add-instruction-button");
-
-    var x = 1;
-    $(add_ingredient_button).click(function(e) {
-        e.preventDefault();
-        if (x < max_fields) {
-            x++;
-            $(ingredientWrapper).append('<div><input type="text" name="ingredients"/><a href="#" class="delete">Delete</a></div>'); //add input box
-        } else {
-            alert('You have reached the limit')
-        }
-    });
-    $(ingredientWrapper).on("click", ".delete", function(e) {
-        e.preventDefault();
-        $(this).parent('div').remove();
-        x--;
-    })
-
-     var y = 1;
-    $(add_instruction_button).click(function(e) {
-        e.preventDefault();
-        if (y < max_fields) {
-            y++;
-            $(instructionWrapper).append('<div><input type="text" name="instructions"/><a href="#" class="delete">Delete</a></div>'); //add input box
-        } else {
-            alert('You have reached the limit')
-        }
-    });
-        $(instructionWrapper).on("click", ".delete", function(e) {
-        e.preventDefault();
-        $(this).parent('div').remove();
-        y--;
-    })
-
-
-
-      });
-    </script>
+    <script src="{{url_for('static', filename='js/cocktailguide.js')}}" type="text/javascript"></script>
 </body>
 
 </html>

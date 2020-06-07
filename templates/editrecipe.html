@@ -1,93 +1,93 @@
 {% extends 'base.html' %} {% block content %}
-
-<h2>Edit Recipe</h2>
-
-<div class="row">
+<div class="parallax-container">
+    <div class="parallax"><img src="https://res.cloudinary.com/dwpozm2nb/image/upload/v1589152889/cocktail_image1_frghqq.jpg"></div>
+    <h2 class="cocktails-heading">Edit Recipe</h2>
+</div>
+<div class="row container main-container">
     <form id='myform' action="{{ url_for('update_recipe', recipe_id=recipe._id) }}" method="POST" class="col s12">
-  <div class="row">
-                <!--ALCOHOLS MULTIPLE SELECT-->
-                <div class="input-field col s6">
-                    <i class="material-icons prefix">assignment</i>
-                    <select id="alcohol" name="alcohol">
-                  <option value="" disabled selected>Choose Alcohol</option>
-                    {% for alc in alcohols %}
-                    <option value="{{alc.alcohol}}">{{alc.alcohol}}</option>
-                    {% endfor %}
+        <div class="row">
+        <!--ALCOHOLS MULTIPLE SELECT-->
+        <div class="input-field col s6">
+            <i class="material-icons prefix">assignment</i>
+            <select id="alcohol" name="alcohol">
+            <option value="" disabled selected>Choose Alcohol</option>
+            {% for alc in alcohols %}
+            <option value="{{alc.alcohol}}">{{alc.alcohol}}</option>
+            {% endfor %}
+        </select>
+            <label>Alcohol Select</label>
+        </div>
+        </div>
+    <!--ALCOHOL RATING-->
+    <div class="row">
+            <div class="input-field col s6">
+                <i class="material-icons prefix">assignment</i>
+                <input id="cocktail" name="cocktail" type="text">
+                <label for="icon_prefix">What is the name of the cocktail you wish to add?</label>
+            </div>
+        <!--PREP TIME-->
+        <div class="input-field col s6">
+            <i class="material-icons prefix">alarm</i>
+            <input id="prep_time" name="prep_time" type="text">
+            <label for="icon_prefix">Preperation Time in Mins</label>
+        </div>
+    </div>
+    <div class="row">
+        <!--ALCOHOL RATING SELECT-->
+        <div class="input-field col s6">
+            <i class="material-icons prefix">filter_1</i>
+            <select id="alchol_rating" name="alchol_rating">
+                <option value="" disabled selected>Alcohol Rating</option>
+                <option value="One">One</option>
+                <option value="Two">Two</option>
+                <option value="Three">Three</option>
+                <option value="Four">Four</option>
+                <option value="Five">Five</option>
                 </select>
-                    <label>Alcohol Select</label>
-                </div>
-            </div>
-        <!--ALCOHOL RATING-->
-        <div class="row">
-                <div class="input-field col s6">
-                    <i class="material-icons prefix">assignment</i>
-                    <input id="cocktail" name="cocktail" type="text">
-                    <label for="icon_prefix">What is the name of the cocktail you wish to add?</label>
-                </div>
-            <!--PREP TIME-->
-            <div class="input-field col s6">
-                <i class="material-icons prefix">alarm</i>
-                <input id="prep_time" name="prep_time" type="text">
-                <label for="icon_prefix">Preperation Time in Mins</label>
-            </div>
+            <label>How strong is this cocktail?</label>
         </div>
-        <!--RECIPE DIFFICULTY-->
-        <div class="row">
-            <!--ALCOHOL RATING SELECT-->
-            <div class="input-field col s6">
-                <i class="material-icons prefix">filter_1</i>
-                <select id="alchol_rating" name="alchol_rating">
-                  <option value="" disabled selected>Alcohol Rating</option>
-                    <option value="One"> <i class="tiny star"></i></option>
-                    <option value="Two">Two</option>
-                    <option value="Three">Three</option>
-                    <option value="Four">Four</option>
-                    <option value="Five">Five</option>
-                    </select>
-                <label>How strong is this cocktail?</label>
-            </div>
-            <div class="input-field col s6">
-                <i class="material-icons prefix">equalizer</i>
-                <select id="difficulty" name="difficulty">
-                  <option value="" disabled selected>Select The Difficulty</option>
-                    <option value="Easy">Easy</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Hard">Hard</option>
-                    </select>
-                <label>What is the Difficulty?</label>
-            </div>
-            <!--RECIPE DESCRIPTION-->
-            <div class="input-field col s12">
-                <i class="material-icons prefix">subject</i>
-                <textarea name="description" id="description" class="materialize-textarea"></textarea>
-                <label for="icon_telephone">Recipe Description</label>
-            </div>
+        <div class="input-field col s6">
+            <!--RECIPE DIFFICULTY-->
+            <i class="material-icons prefix">equalizer</i>
+            <select id="difficulty" name="difficulty">
+                <option value="" disabled selected>Select The Difficulty</option>
+                <option value="Easy">Easy</option>
+                <option value="Medium">Medium</option>
+                <option value="Hard">Hard</option>
+                </select>
+            <label>What is the Difficulty?</label>
         </div>
-        <!--INGREDIENTS-->
-        <div class="row">
-            <div class="s6 addrecipe_sub_head">
-                <h5>Ingredients</h5>
-            </div>
+        <!--RECIPE DESCRIPTION-->
+        <div class="input-field col s12">
+            <i class="material-icons prefix">subject</i>
+            <textarea name="description" id="description" class="materialize-textarea"></textarea>
+            <label for="icon_telephone">Recipe Description</label>
         </div>
-        <div class="row">
-            <div id="add-ingredient" class="input-field s6">
-                <input id="ingredients" name="ingredients" type="text">
-                <label for="icon_prefix">Add Ingredient</label>
-                <a id="add-ingredient-button"  class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a>
-            </div>
-        </div>
-        <!--Instructions-->
+    </div>
+    <!--INGREDIENTS-->
+    <div class="row">
         <div class="s6 addrecipe_sub_head">
-                <h5>Instructions</h5>
-            </div>
-          <div class="row">
-            <div id="add-instruction" class="input-field s6">
-                <input id="instructions" name="instructions" type="text">
-                <label for="icon_prefix">Add Instructions</label>
-                <a id="add-instruction-button" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">add</i></a>
-            </div>
+            <h5>Ingredients</h5>
         </div>
-
+    </div>
+    <div class="row">
+        <div id="add-ingredient" class="input-field s6">
+            <input id="ingredients" name="ingredients" type="text">
+            <label for="icon_prefix">Add Ingredient</label>
+            <a id="add-ingredient-button"  class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">add</i></a>
+        </div>
+    </div>
+    <!--Instructions-->
+    <div class="s6 addrecipe_sub_head">
+            <h5>Instructions</h5>
+        </div>
+        <div class="row">
+        <div id="add-instruction" class="input-field s6">
+            <input id="instructions" name="instructions" type="text">
+            <label for="icon_prefix">Add Instructions</label>
+            <a id="add-instruction-button" class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">add</i></a>
+        </div>
+    </div>
         <!--ADD RECIPE IMAGE URL-->
         <div class="input-field col s12">
             <i class="material-icons prefix">insert_photo</i>
@@ -98,7 +98,7 @@
         <div class="row btn-align addrecipe_btn">
             <button class="btn waves-effect waves-light grey darken-3" type="submit" name="action">Add Recipe
                 <i class="material-icons right">playlist_add</i>
-             </button>
+            </button>
         </div>
     </form>
 </div>
