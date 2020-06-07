@@ -12,7 +12,11 @@
             <select id="alcohol" name="alcohol">
             <option value="" disabled selected>Choose Alcohol</option>
             {% for alc in alcohols %}
-            <option value="{{alc.alcohol}}">{{alc.alcohol}}</option>
+                {% if alc.alcohol == recipe.alcohol %}
+                <option value="{{alc.alcohol}}">{{alc.alcohol}}</option>
+                {% else %}
+                <option value="{{alc.alcohol}}">{{alc.alcohol}}</option>
+                {% endif %}
             {% endfor %}
         </select>
             <label>Alcohol Select</label>
@@ -22,13 +26,13 @@
     <div class="row">
             <div class="input-field col s6">
                 <i class="material-icons prefix">assignment</i>
-                <input id="cocktail" name="cocktail" type="text">
+                <input id="cocktail" name="cocktail" type="text" value="{{recipe.cocktail}}">
                 <label for="icon_prefix">What is the name of the cocktail you wish to add?</label>
             </div>
         <!--PREP TIME-->
         <div class="input-field col s6">
             <i class="material-icons prefix">alarm</i>
-            <input id="prep_time" name="prep_time" type="text">
+            <input id="prep_time" name="prep_time" type="text" value="{{recipe.prep_time}}" >
             <label for="icon_prefix">Preperation Time in Mins</label>
         </div>
     </div>
@@ -38,6 +42,7 @@
             <i class="material-icons prefix">filter_1</i>
             <select id="alchol_rating" name="alchol_rating">
                 <option value="" disabled selected>Alcohol Rating</option>
+                <option value="{{recipe.alchol_rating}}"selected>{{recipe.alchol_rating}}</option>
                 <option value="One">One</option>
                 <option value="Two">Two</option>
                 <option value="Three">Three</option>
@@ -51,6 +56,7 @@
             <i class="material-icons prefix">equalizer</i>
             <select id="difficulty" name="difficulty">
                 <option value="" disabled selected>Select The Difficulty</option>
+                <option value="{{recipe.difficulty}}" selected >{{recipe.difficulty}}</option>
                 <option value="Easy">Easy</option>
                 <option value="Medium">Medium</option>
                 <option value="Hard">Hard</option>
@@ -60,7 +66,7 @@
         <!--RECIPE DESCRIPTION-->
         <div class="input-field col s12">
             <i class="material-icons prefix">subject</i>
-            <textarea name="description" id="description" class="materialize-textarea"></textarea>
+            <textarea name="description" id="description" class="materialize-textarea" value="{{recipe.description}}">{{recipe.description}}></textarea>
             <label for="icon_telephone">Recipe Description</label>
         </div>
     </div>
@@ -72,7 +78,7 @@
     </div>
     <div class="row">
         <div id="add-ingredient" class="input-field s6">
-            <input id="ingredients" name="ingredients" type="text">
+            <input id="ingredients" name="ingredients" type="text" value="{{recipe.ingredients}}">
             <label for="icon_prefix">Add Ingredient</label>
             <a id="add-ingredient-button"  class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">add</i></a>
         </div>
@@ -83,7 +89,7 @@
         </div>
         <div class="row">
         <div id="add-instruction" class="input-field s6">
-            <input id="instructions" name="instructions" type="text">
+            <input id="instructions" name="instructions" type="text" value="{{recipe.instructions}}">
             <label for="icon_prefix">Add Instructions</label>
             <a id="add-instruction-button" class="btn-floating btn-small waves-effect waves-light"><i class="material-icons">add</i></a>
         </div>
@@ -91,12 +97,12 @@
         <!--ADD RECIPE IMAGE URL-->
         <div class="input-field col s12">
             <i class="material-icons prefix">insert_photo</i>
-            <textarea name="cocktail_image" id="cocktail_image" class="materialize-textarea"></textarea>
+            <textarea name="cocktail_image" id="cocktail_image" class="materialize-textarea">{{recipe.cocktail_image}}</textarea>
             <label for="icon_telephone">Add an image of your cocktail</label>
         </div>
         <!--ADD RECIPE SUBMIT BUTTON-->
         <div class="row btn-align addrecipe_btn">
-            <button class="btn waves-effect waves-light grey darken-3" type="submit" name="action">Add Recipe
+            <button class="btn waves-effect waves-light grey darken-3" type="submit" name="action">update Recipe
                 <i class="material-icons right">playlist_add</i>
             </button>
         </div>
