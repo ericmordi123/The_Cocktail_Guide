@@ -11,6 +11,8 @@ The aim of this project was to utilise the skills and frameworks leanred to crea
 | - As a User I want the ability to add cocktail reicpe.  | From homepage click on get started > From Recipe page click Addrecipe in navbar > fill in form click add recipe > you are forwarded back to recipes pages where you can see added recipe | Pass |
 | - As a User I want the ability to edit recipe  | From homepage click on get started > From Recipe page click on edit recipe on any recipe card > fill in form click add recipe > you are forwarded back to recipes pages where you can see updated recipe | Pass |
 | - As a User I want the ability to sign/register my own account where I can see recipes I have made  | From homepage click on get started > From Recipe page click MyHome in navbar > from sign in page either fill in details and click login or click  Sign up here. > if logged in you are forwarded to ypur own homepage where you can see your cocktail recipes or you are forwared to register page to register details and redirected back to sign in | Pass |
+| - As a User I want the ability to delete a recipe  | From homepage click on get started > From Recipe page click on edit recipe on any recipe card > click delete recipe > you are forwarded back to recipes pages where you can see recipe has been deleted | Pass |
+| - As a User I want the ability to sign/register my own account where I can see recipes I have made  | From homepage click on get started > From Recipe page click MyHome in navbar > from sign in page either fill in details and click login or click  Sign up here. > if logged in you are forwarded to ypur own homepage where you can see your cocktail recipes or you are forwared to register page to register details and redirected back to sign in | Pass |
 | - As a User I want the ability to find a cocktail recipe based on the alcohol used  | From homepage click on get started > From Recipe page click Alcohols in navbar > click on alcohol card to see discription or click view to see cocktails | Pass | 
 | - As a User I want to see a step by step guide on how to make a cocktail. | From homepage click on get started > From Recipe page click on veiw recipe on any recipe card > redirected to selected cocktail recipe page | Pass |
 | - As a User I want to see the difficulty in making and how strong a cocktail is. | From homepage click on get started > From Recipe page click on veiw recipe on any recipe card > redirected to selected cocktail recipe page |
@@ -37,16 +39,25 @@ and the user a great experience no matter what devise is being used to access th
 - [W3C HTML](https://validator.w3.org/)
 - [W3C CSS3](https://jigsaw.w3.org/css-validator/)
 
-### Issue found and fixed
+### Issues found and fixed
 - The alignment of the images on the cocktail recipe page was off due to images varying in sizes. I fixed this by reseaching a solution and finding it is a common fault that can be fixed by setting a fixed height.
 - The index page content was not fixing onto the page and was carouselling along with the slides. This was fixed by digging deep into [stackoverflow](https://stackoverflow.com/) and finding a solution. 
 - The Headings for all main pages where getting lost in the background image so I initailly used the brightness filter in css to dim the background image but from looking through templates and UX design pages i thought
 adding a border in css for all headers would be a unique way to make the page pop aswell and for the userto have a better experience. This was confirmed by friends and family who tested the app.
 
 ### Things to improve in the Future
+- The user will be able to access there own personal homepage that shows them the cocktails they created
 - Give the user the abilty to share recipes on other platforms like twitter
 
 ## DEPLOYMENT
 All code throughtout the build process, every bug fix, all corrections and ammendments have been commited to GitHub using [Version Control]().
+
 All my commits and the full code for my project can be found on my GitHub Repository [found here]()
+
 All work has been commited and deployed to Heroku [found here]()
+
+### content
+The content for the app was precured from [unsplash](https://unsplash.com/) a great platform for good quality images and a number of recipe websites and textbook guides 
+- (https://www.thespruceeats.com/quick-guide-to-distilled-spirits-760713)
+- (https://uk.thebar.com/cocktail-recipes/classic-cocktails)
+-(https://www.socialandcocktail.co.uk/top-100-cocktails/)
