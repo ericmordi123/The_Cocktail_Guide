@@ -85,11 +85,9 @@ Your database should be named cook_book with collections set up as outlined in t
 
 From the terminal you can then run the app with python app.py and view in a browser at http://127.0.0.1:5000/
 
-All code throughtout the build process, every bug fix, all corrections and ammendments have been commited to GitHub using [Version Control]().
+All my commits and the full code for my project can be found on my GitHub Repository [found here](https://github.com/ericmordi123/The_Cocktail_Guide)
 
-All my commits and the full code for my project can be found on my GitHub Repository [found here]()
-
-All work has been commited and deployed to Heroku [found here]()
+All work has been commited and deployed to Heroku [found here](https://the-cocktail-guide.herokuapp.com/)
 
 ### content
 The content for the app was precured from [unsplash](https://unsplash.com/) a great platform for good quality images and a number of recipe websites and textbook guides 
