@@ -4,20 +4,20 @@
     <h2 class="cocktails-heading">Cocktails</h2>
 </div>
 <div class="container row main-container">
-    {% for recipe in recipe %}
+    {% for item in recipe %}
             <!--cocktail card-->
     <div class="col l4 card_div">
         <div class="card hoverable">
             <div class="card-image">
-                <img src="{{recipe.cocktail_image}}" alt="cocktail image">
+                <img src="{{item.cocktail_image}}" alt="cocktail image">
             </div>
             <div class="card-content">
-                <span class="card-title">{{recipe.cocktail.title()}}</span>
-                <p>{{recipe.description.capitalize()|truncate(30)}}</p>
+                <span class="card-title">{{item.cocktail.title()}}</span>
+                <p>{{item.description.capitalize()|truncate(30)}}</p>
             </div>
             <div class="card-action">
-            <a href="{{ url_for('cocktail_recipe', recipe_id=recipe._id) }}">View Recipe</a>
-            <a href="{{ url_for('editrecipe', recipe_id=recipe._id) }}">Edit Recipe</a>
+            <a href="{{ url_for('cocktail_recipe', recipe_id=item._id) }}">View Recipe</a>
+            <a href="{{ url_for('editrecipe', recipe_id=item._id) }}">Edit Recipe</a>
             </div>
         </div>
     </div>

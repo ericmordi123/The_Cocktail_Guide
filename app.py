@@ -10,8 +10,7 @@ if os.path.exists("env.py"):
 app = Flask(__name__)
 app.secret_key = os.environ.get("SECRET_KEY")
 app.config["MONGO_DBNAME"] = 'the_cocktail_guide'
-app.config["MONGO_URI"] = 'mongodb+srv://root:r00tUser@myfirstcluster-ldgtk.mongodb.net/the_cocktail_guide?retryWrites=true&w=majority'
-
+app.config["MONGO_URI"] = os.getenv('MONGO_URI', 'mongodb://localhost')
 
 mongo = PyMongo(app)
 @app.route('/')
@@ -70,8 +69,8 @@ def insert_recipe():
             'alcohol': request.form.get('alcohol'),
             'difficulty': request.form.get('difficulty'),
             'description': request.form.get('description'),
-            'ingredients': request.form.getlist('ingredients'),
-            'instructions': request.form.getlist('instructions'),
+            'ingredients': request.form.getlist('ingredients[]'),
+            'instructions': request.form.getlist('instructions[]'),
             'alcohol_rating': request.form.get('alcohol_rating'),
             'cocktail_image': request.form.get('cocktail_image'),
             'prep_time': request.form.getlist('prep_time')
@@ -106,8 +105,8 @@ def update_recipe(recipe_id):
             'alcohol': request.form.get('alcohol'),
             'difficulty': request.form.get('difficulty'),
             'description': request.form.get('description'),
-            'ingredients': request.form.getlist('ingredients'),
-            'instructions': request.form.getlist('instructions'),
+            'ingredients': request.form.getlist('ingredients[]'),
+            'instructions': request.form.getlist('instructions[]'),
             'alcohol_rating': request.form.get('alcohol_rating'),
             'cocktail_image': request.form.get('cocktail_image'),
             'prep_time': request.form.getlist('prep_time')

@@ -50,6 +50,41 @@ adding a border in css for all headers would be a unique way to make the page po
 - Give the user the abilty to share recipes on other platforms like twitter
 
 ## DEPLOYMENT
+Heroku
+
+After loging into heroku I created a new app, using the name spiceword-cookbook and set the region to Europe.
+
+Select application
+
+In the settings tab I clicked reveal config vars and entered the required environment variables, which in this case were:
+
+IP 0.0.0.0
+
+PORT 5000
+
+MONGO_URI mongodb+srv://root:<password_removed>@myfirstcluster-fai9p.mongodb.net/cook_book?retryWrites=true&w=majority
+
+SECRET secret key for flask session
+
+From the heroku dashboard of your newly created application, click on "Deploy" > "Deployment method" and select GitHub.
+
+Confirm the linking of the heroku app to the correct GitHub repository.
+
+In the heroku dashboard, click "Deploy".
+
+In the "Manual Deployment" section of this page, made sure the master branch is selected and then click "Deploy Branch".
+
+The site is now successfully deployed.
+
+### Local Deployment
+Within the file app.py change the line app.config['SECRET_KEY'] = os.getenv('SECRET') to app.config['SECRET_KEY'] = os.getenv('SECRET', '<your_key>) where <your_key> is a secret key of your choosing.
+
+Also change app.config["MONGO_URI"] = os.getenv('MONGO_URI') to app.config["MONGO_URI"] = os.getenv('MONGO_URI', ) where is the string that points to your own MongoDB.
+
+Your database should be named cook_book with collections set up as outlined in the database design section of this document. To help, you can also refer to these included JSON examples
+
+From the terminal you can then run the app with python app.py and view in a browser at http://127.0.0.1:5000/
+
 All code throughtout the build process, every bug fix, all corrections and ammendments have been commited to GitHub using [Version Control]().
 
 All my commits and the full code for my project can be found on my GitHub Repository [found here]()
